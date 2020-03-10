@@ -3,7 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hungry for Hiking</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="title">Hungry for Hiking!</div>
+    <div id="weather"></div>
+    <div id="search"></div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="city" type="text" class="validate">
+            <label for="city">City</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="state" type="text" class="validate">
+            <label for="state">State</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="zipCode" type="text" class="validate">
+            <label for="zipCode">Zip Code</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="country" type="text" class="validate">
+            <label for="country">Country</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2">
+            <input type="date" id="start" name="trip-start" value="yyyy-mm-dd">
+            <label for="date">Date</label>
+          </div>
+        </div>
+      </form>
+    </div>
+          
+
+
+    <div id="resultsTrails"></div>
+    <div id="resultsFood"></div>
+    <div id="map"></div>
+
+    <!-- Restaurant availability hours from api -->
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+  </body>
 </html>
