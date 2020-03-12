@@ -6,12 +6,21 @@ $(document).ready(function() {
 
   // call data from API
 
+  var apiKey = "will have in comment";
+  var lat = "";
+  var lon = "";
+
+  var form = new FormData();
   var settings = {
-    url: "https://www.benbrougher.tech/hiker/v1/trails/",
+    url:
+      "https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=" +
+      apiKey,
     method: "GET",
-    timeout: 0,
-    headers: {
-      "Content-Type": "application/json"
+    success: function(result) {
+      console.log(result);
+    },
+    error: function(error) {
+      console.log(error);
     }
   };
 
