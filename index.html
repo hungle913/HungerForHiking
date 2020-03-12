@@ -16,23 +16,41 @@
   crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="title">Hunger for Hiking!</div>
-    <div id="weather"></div>
+    
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <div id="title">Hunger for Hiking!</div>
+        </div>
+     
+        <div class="input-field col s6">
+          <div id="weather">Weather</div>
+      </div>
+    </form>
+    </div>
+    
+   
     <div id="search"></div>
     <div class="row">
-      <form class="col s6">
+      <form class="col s12">
         <div class="row">
-          <div class="input-field col s2">
+          <div class="input-field col s2"></div>
+          <div class="input-field col s4">
             <input id="city" type="text" class="validate" />
             <label for="city">City</label>
           </div>
-          <div class="input-field col s2">
+          <div class="input-field col s4">
             <input id="state" type="text" class="validate" />
             <label for="state">State</label>
           </div>
         </div>
+        
+        
+        
         <div class="row">
-          <div class="input-field col s3">
+          <div class="input-field col s2"></div>
+          <div class="input-field col s4">
             <input id="zipCode" type="text" class="validate" />
             <label for="zipCode">Zip Code</label>
           </div>
@@ -50,8 +68,20 @@
       </form>
     </div>
 
-    <div id="resultsTrails"></div>
-    <div id="resultsFood"></div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <div id="resultsTrails">Trail Card</div>
+          </div>
+
+          <div class="input-field col s6">
+             <div id="resultsFood">Restaurant Card</div>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <div id="map"></div>
 
     <!-- Restaurant availability hours from api -->
