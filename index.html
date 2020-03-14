@@ -4,71 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hungry for Hiking</title>
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Indie+Flower|Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   </head>
+  
   <body>
     
-    <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s2"></div>
-        <div class="input-field col s6">
-          <div id="title">Hunger for Hiking!!!</div>
-        </div>
-        <br>
-        <br>
-        <div class="input-field col s4">
-          <div id="weather">Weather</div>
-      </div>
-    </form>
-    </div>
-    
-    <div id="search"></div>
     <div class="row">
       <form class="col s12">
         <div class="row">
           <div class="input-field col s2"></div>
-          <div class="input-field col s4">
-            <input id="city" type="text" class="validate" />
-            <label for="city">City</label>
+          <div class="input-field col s6">
+             <div id="title"><span class = "hunger">Hunger</span> for <span class = "hiking">Hiking!</span></div>
           </div>
+        <br>
+        <br>
           <div class="input-field col s4">
-            <input id="state" type="text" class="validate" />
-            <label for="state">State</label>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="input-field col s2"></div>
-          <div class="input-field col s4">
-            <input id="zipCode" type="text" class="validate" />
-            <label for="zipCode">Zip Code</label>
-          </div>
-        <div class="row">
-          <div class="input-field col s4">
-            <input
-              type="date"
-              id="start"
-              name="trip-start"
-              value="yyyy-mm-dd"
-            />
-            <label for="date">Date</label>
+            <div id="weather">Weather</div>
           </div>
         </div>
       </form>
     </div>
+    
+    <div id="search">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s2"></div>
+            <div class="input-field col s4">
+              <input id="city" type="text" class="validate" />
+              <label for="city">City</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="state" type="text" class="validate" />
+              <label for="state">State</label>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="input-field col s2"></div>
+            <div class="input-field col s4">
+              <input id="zipCode" type="text" class="validate" />
+              <label for="zipCode">Zip Code</label>
+            </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" />
+              <label for="date">Date</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
 
-
-    <button id="submit" type="button">Click Me!</button>
+    <div class = "button">
+      <a class = "waves-effect waves-light btn-large" id = "submit">Submit</a>
+    </div>
           
 
 
@@ -76,11 +70,13 @@
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">
-            <div id="resultsTrails">Trail Card</div>
+            <h2>Trails</h2>
+            <div id="resultsTrails"></div>
           </div>
 
           <div class="input-field col s6">
-             <div id="resultsFood">Restaurant Card</div>
+            <h2>Restaurants</h2>
+             <div id="resultsFood"></div>
           </div>
         </div>
       </form>
@@ -94,12 +90,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/csv/papaparse.min.js"></script>
     <script type="text/javascript" src="assets/javascript/jared_code.js"></script>
-
-    <script
-      type="text/javascript"
-      src="assets/javascript/javascript.js"
-    ></script>
-
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
     <script type="text/javascript" src="assets/javascript/app2.js"></script>
 
   </body>
