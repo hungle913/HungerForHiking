@@ -26,7 +26,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig) ;
 
 //then ya reference database
-var database = firebase.database().ref()
+var database = firebase.database()
 
 //Heard ya like variables so I made some variables
 var state ;
@@ -45,18 +45,40 @@ var country ;
 
         state = $("#state").val().trim()
             console.log(state , "state")
-        city = $("city").val().trim()
+        city = $("#city").val().trim()
             console.log("city" , city)
-        zipcode = $("zipCode").val().trim()
+        // zipcode = $("#zipCode").val().trim()
+        zipcode = "46113"
             console.log("zipcode" , zipcode)
-        date = $("date").val().trim()
-            console.log("date" , date)
-        country = $("country").val().trim() 
-            console.log("country" , country)
+        // date = $("#date").val().trim()
+        //     console.log("date" , date)
+        // country = $("#country").val().trim() 
+        //     console.log("country" , country)
+
+        // return firebase.database.ref('/hungry-for-hiking/').once('value').then(snapshot => {
+        //     var zipResults = (snapshot.val() && snapshot.val().zipcode)
+        //         console.log("show up please" , zipResults)
 
 
+
+        // } )
+
+        database.ref().on("value", function(snapshot) {
+            console.log("snapshot" , snapshot.val());
+          
+
+          database.ref().on("value", searchDB =>  {
+            
+            //make reference to the database in variable
+            const DB = snapshot.val()
+            const result = DB.filter( info => info === zipcode)
+            console.log(result , "result")
+        
+          });
 
     })
+});
+
 
 
 
