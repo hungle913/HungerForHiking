@@ -4,57 +4,103 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hungry for Hiking</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="title">Hungry for Hiking!</div>
-    <div id="weather"></div>
+    
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s2"></div>
+        <div class="input-field col s6">
+          <div id="title">Hunger for Hiking!!!</div>
+        </div>
+        <br>
+        <br>
+        <div class="input-field col s4">
+          <div id="weather">Weather</div>
+      </div>
+    </form>
+    </div>
+    
     <div id="search"></div>
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s6">
-            <input id="city" type="text" class="validate">
+          <div class="input-field col s2"></div>
+          <div class="input-field col s4">
+            <input id="city" type="text" class="validate" />
             <label for="city">City</label>
           </div>
-          <div class="input-field col s6">
-            <input id="state" type="text" class="validate">
+          <div class="input-field col s4">
+            <input id="state" type="text" class="validate" />
             <label for="state">State</label>
           </div>
         </div>
+        
         <div class="row">
-          <div class="input-field col s6">
-            <input id="zipCode" type="text" class="validate">
+          <div class="input-field col s2"></div>
+          <div class="input-field col s4">
+            <input id="zipCode" type="text" class="validate" />
             <label for="zipCode">Zip Code</label>
           </div>
-          <div class="input-field col s6">
-            <input id="country" type="text" class="validate">
-            <label for="country">Country</label>
-          </div>
-        </div>
         <div class="row">
-          <div class="input-field col s2">
-            <input type="date" id="start" name="trip-start" value="yyyy-mm-dd">
+          <div class="input-field col s4">
+            <input
+              type="date"
+              id="start"
+              name="trip-start"
+              value="yyyy-mm-dd"
+            />
             <label for="date">Date</label>
           </div>
         </div>
       </form>
     </div>
 
+
     <button id="submit" type="button">Click Me!</button>
           
 
 
-    <div id="resultsTrails"></div>
-    <div id="resultsFood"></div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <div id="resultsTrails">Trail Card</div>
+          </div>
+
+          <div class="input-field col s6">
+             <div id="resultsFood">Restaurant Card</div>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <div id="map"></div>
 
     <!-- Restaurant availability hours from api -->
+
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/csv/papaparse.min.js"></script>
     <script type="text/javascript" src="assets/javascript/jared_code.js"></script>
+
+    <script
+      type="text/javascript"
+      src="assets/javascript/javascript.js"
+    ></script>
+
+    <script type="text/javascript" src="assets/javascript/app2.js"></script>
+
   </body>
 </html>

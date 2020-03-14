@@ -1,0 +1,12 @@
+body {
+    background-image: url("../images/Hike5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #25A69A;
+    background-color: #EBE6DF;  
+}
+
+#title {
+    font-size: 44px;
+    font-weight: bold;
+}
