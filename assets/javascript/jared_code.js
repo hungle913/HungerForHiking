@@ -23,68 +23,72 @@ var firebaseConfig = {
     appId: "1:1072732894647:web:79aedcb9e81e6a2b7fa432"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig) ;
+firebase.initializeApp(firebaseConfig);
 
 //then ya reference database
 var database = firebase.database()
 
 //Heard ya like variables so I made some variables
-var state ;
-var city ; 
-var zipcode ; 
-var date ; 
-var country ; 
+var state;
+var city;
+var zipcode;
+var date;
+var country;
 
 //then we make a function to run on submit click that pulls matching data from query
 
-    //then we need to get the value of the zipcode blank
-    
-
-    $("#submit").on("click" , event => {
-        event.preventDefault()
-
-        state = $("#state").val().trim()
-            console.log(state , "state")
-        city = $("#city").val().trim()
-            console.log("city" , city)
-        // zipcode = $("#zipCode").val().trim()
-        zipcode = "46113"
-            console.log("zipcode" , zipcode)
-        // date = $("#date").val().trim()
-        //     console.log("date" , date)
-        // country = $("#country").val().trim() 
-        //     console.log("country" , country)
-
-        // return firebase.database.ref('/hungry-for-hiking/').once('value').then(snapshot => {
-        //     var zipResults = (snapshot.val() && snapshot.val().zipcode)
-        //         console.log("show up please" , zipResults)
+//then we need to get the value of the zipcode blank
 
 
+$("#submit").on("click", event => {
+    event.preventDefault()
 
-        // } )
+    state = $("#state").val().trim()
+    console.log(state, "state")
+    city = $("#city").val().trim()
+    console.log("city", city)
+    // zipcode = $("#zipCode").val().trim()
+    zipcode = "46113"
+    console.log("zipcode", zipcode)
+    // date = $("#date").val().trim()
+    //     console.log("date" , date)
+    // country = $("#country").val().trim() 
+    //     console.log("country" , country)
 
-        database.ref().on("value", function(snapshot) {
-            console.log("snapshot" , snapshot.val());
-          
 
-          database.ref().on("value", searchDB =>  {
-            
+    database.ref().on("value", function (snapshot) {
+        console.log("snapshot", snapshot.val());
+
+
+        database.ref().on("value", searchDB => {
+
             //make reference to the database in variable
             const DB = snapshot.val()
-            const result = DB.filter( info => info === zipcode)
-            console.log(result , "result")
-        
-          });
-
-    })
-});
 
 
+            DB.filter(info => {
+                console.log("info" , info)
+                if (info.includes(zipcode)) {
+                    
+
+                    var lat = info[1]
+                    var lng = info[2]
+                    console.log(info, "info")
+                    console.log(lat, "lat")
+                    console.log(lng, "lng")
+                    return ;
+                    
+
+                } else {
+
+                    console.log("better luck next time")
 
 
+                }
 
+ 
 
-
-
-
-
+            })
+        });
+    });
+})
