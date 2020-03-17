@@ -20,12 +20,11 @@ var firebaseConfig = {
     appId: "1:1072732894647:web:79aedcb9e81e6a2b7fa432"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 //then ya reference database
 
-var database = firebase.database()
-
+var database = firebase.database();
 
 //Heard ya like variables so I made some variables
 var state;
@@ -38,9 +37,8 @@ var country;
 
 //then we need to get the value of the zipcode blank
 
-
-
 $("#submit").on("click", event => {
+
     event.preventDefault()
 
     state = $("#state").val().trim()
