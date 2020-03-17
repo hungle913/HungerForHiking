@@ -48,7 +48,7 @@ $("#submit").on("click", event => {
     city = $("#city").val().trim()
     console.log("city", city)
     // zipcode = $("#zipCode").val().trim()
-    zipcode = "46113"
+    zipcode = $("#zipCode").val().trim()
     console.log("zipcode", zipcode)
     // date = $("#date").val().trim()
     //     console.log("date" , date)
@@ -60,7 +60,7 @@ $("#submit").on("click", event => {
         console.log("snapshot", snapshot.val());
 
 
-        database.ref().on("value", searchDB => {
+        database.ref().on("value", () => {
 
             //make reference to the database in variable
             const DB = snapshot.val()
@@ -76,7 +76,8 @@ $("#submit").on("click", event => {
                     console.log(info, "info")
                     console.log(lat, "lat")
                     console.log(lng, "lng")
-                    return ;
+                    result ;
+                    console.log(result , "result")
                     
 
                 } else {
