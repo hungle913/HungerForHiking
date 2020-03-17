@@ -58,7 +58,6 @@ $("#submit").on("click", event => {
         console.log("snapshot", snapshot.val());
 
 
-        database.ref().on("value", () => {
 
             //make reference to the database in variable
             const DB = snapshot.val()
@@ -83,7 +82,7 @@ $("#submit").on("click", event => {
 
                         // create a GET function and input
 
-                        var form = new FormData();
+                       
                         var settings = {
                             url: "https://www.hikingproject.com/data/get-trails?lat=" +
                                 lat +
@@ -154,20 +153,27 @@ $("#submit").on("click", event => {
 
                 }
 
-                //zomato api
-                
+                // //zomato api
+                // var zomatoKey = "a62a9e06b2ea5af51b9e60e3fd48ff0f"
+                // var zomSettings = {
+
+                //     url: "https://developers.zomato.com/api/v2.1/search?lat=" + lat + "&lon=" + lng ,
+                //     method: "GET"
+
+                // } 
+
+                // $()
 
                 //weather api
 
 
 
             )
-            console.log(result, "result fancy")
+           
 
 
 
 
 
-        });
     })
 });
