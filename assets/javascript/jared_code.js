@@ -4,29 +4,28 @@
 //maybe pull city/state name from just zipcode
 //STORE VALUE AS A VARIABLE TO USE IN BOTH APIS
 
-
 //FOR PAST MVP STATUS
-//BE ABLE TO PROVIDE CITY AND STATE AND GET LAT AND LONG FROM JSON OBJECT 
+//BE ABLE TO PROVIDE CITY AND STATE AND GET LAT AND LONG FROM JSON OBJECT
 //IF CITY HAS MULTIPLE RESULTS MAKE A PICK LIST
-//BE ABLE TO PICK A STATE THEN LIST CITIES IN THAT STATE THEN THE ZIPS FOR THAT CITY 
-
-
+//BE ABLE TO PICK A STATE THEN LIST CITIES IN THAT STATE THEN THE ZIPS FOR THAT CITY
 
 //First we intialize firebase
 var firebaseConfig = {
-    apiKey: "AIzaSyAS69rSyD2JKuSdzXh4MyuMgZOm9IHN9tQ",
-    authDomain: "hunger-for-hiking.firebaseapp.com",
-    databaseURL: "https://hunger-for-hiking.firebaseio.com",
-    projectId: "hunger-for-hiking",
-    storageBucket: "hunger-for-hiking.appspot.com",
-    messagingSenderId: "1072732894647",
-    appId: "1:1072732894647:web:79aedcb9e81e6a2b7fa432"
+  apiKey: "AIzaSyAS69rSyD2JKuSdzXh4MyuMgZOm9IHN9tQ",
+  authDomain: "hunger-for-hiking.firebaseapp.com",
+  databaseURL: "https://hunger-for-hiking.firebaseio.com",
+  projectId: "hunger-for-hiking",
+  storageBucket: "hunger-for-hiking.appspot.com",
+  messagingSenderId: "1072732894647",
+  appId: "1:1072732894647:web:79aedcb9e81e6a2b7fa432"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 //then ya reference database
+
 var database = firebase.database()
+
 
 //Heard ya like variables so I made some variables
 var state;
@@ -38,6 +37,7 @@ var country;
 //then we make a function to run on submit click that pulls matching data from query
 
 //then we need to get the value of the zipcode blank
+
 
 
 $("#submit").on("click", event => {
@@ -93,3 +93,4 @@ $("#submit").on("click", event => {
         });
     });
 })
+
