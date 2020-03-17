@@ -20,7 +20,7 @@ var firebaseConfig = {
     appId: "1:1072732894647:web:79aedcb9e81e6a2b7fa432"
 };
 // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 //then ya reference database
 
@@ -155,7 +155,7 @@ $("#submit").on("click", event => {
                 }
 
                 //zomato api
-
+                
 
                 //weather api
 
