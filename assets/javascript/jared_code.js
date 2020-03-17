@@ -23,7 +23,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //then ya reference database
-var database = firebase.database().ref();
+
+var database = firebase.database()
+
 
 //Heard ya like variables so I made some variables
 var state;
@@ -36,27 +38,59 @@ var country;
 
 //then we need to get the value of the zipcode blank
 
-$("#submit").on("click", event => {
-  event.preventDefault();
 
-  state = $("#state")
-    .val()
-    .trim();
-  console.log(state, "state");
-  city = $("city")
-    .val()
-    .trim();
-  console.log("city", city);
-  zipcode = $("zipCode")
-    .val()
-    .trim();
-  console.log("zipcode", zipcode);
-  date = $("date")
-    .val()
-    .trim();
-  console.log("date", date);
-  country = $("country")
-    .val()
-    .trim();
-  console.log("country", country);
-});
+
+$("#submit").on("click", event => {
+    event.preventDefault()
+
+    state = $("#state").val().trim()
+    console.log(state, "state")
+    city = $("#city").val().trim()
+    console.log("city", city)
+    // zipcode = $("#zipCode").val().trim()
+    zipcode = $("#zipCode").val().trim()
+    console.log("zipcode", zipcode)
+    // date = $("#date").val().trim()
+    //     console.log("date" , date)
+    // country = $("#country").val().trim() 
+    //     console.log("country" , country)
+
+
+    database.ref().on("value", function (snapshot) {
+        console.log("snapshot", snapshot.val());
+
+
+        database.ref().on("value", () => {
+
+            //make reference to the database in variable
+            const DB = snapshot.val()
+
+
+            DB.filter(info => {
+                console.log("info" , info)
+                if (info.includes(zipcode)) {
+                    
+
+                    var lat = info[1]
+                    var lng = info[2]
+                    console.log(info, "info")
+                    console.log(lat, "lat")
+                    console.log(lng, "lng")
+                    result ;
+                    console.log(result , "result")
+                    
+
+                } else {
+
+                    console.log("better luck next time")
+
+
+                }
+
+ 
+
+            })
+        });
+    });
+})
+
