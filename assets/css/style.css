@@ -58,3 +58,8 @@ p {
   margin-top: -40px;
   font-weight: bold;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
