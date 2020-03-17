@@ -79,7 +79,7 @@ $(document).ready(function() {
 
   // create variable for API
   $.ajax(settings).then(function(response) {
-    // console.log(response);
+    console.log(response);
     // console.log(response.trails[1].name);
 
     // loop through results for the functional logic
@@ -115,7 +115,9 @@ $(document).ready(function() {
         "<p class='details'>Descent: " + response.trails[i].descent + "</p>"
       );
       trailCard.append(
-        "<p class='details'>More info: " + response.trails[i].url + "</p>"
+        "<p class='details'><a href='" +
+          response.trails[i].url +
+          "' target='_blank'>More Info</a></p>"
       );
 
       // append trail card to "resultsTrails"
