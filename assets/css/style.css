@@ -50,6 +50,17 @@ p {
 }
 
 #weather {
-  width: 15%;
-  height: 15%;
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+#weather-results {
+  margin-top: -40px;
+  font-weight: bold;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
 }
