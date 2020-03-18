@@ -38,9 +38,10 @@ var country;
 //then we need to get the value of the zipcode blank
 
 $("#submit").on("click", event => {
-
+    
     event.preventDefault()
-
+    $("#resultsTrails").empty() ;
+    $("#resultsFood").empty() ; 
     state = $("#state").val().trim()
     console.log(state, "state")
     city = $("#city").val().trim()
@@ -59,121 +60,161 @@ $("#submit").on("click", event => {
 
 
 
-            //make reference to the database in variable
-            const DB = snapshot.val()
+        //make reference to the database in variable
+        const DB = snapshot.val()
 
 
-            const result = DB.filter(info => {
-                    console.log("info", info)
-                    if (info.includes(zipcode)) {
+        const result = DB.filter(info => {
+            console.log("info", info)
+            if (info.includes(zipcode)) {
 
 
-                        var lat = info[1]
-                        var lng = info[2]
-                        var result = [lat, lng]
-                        console.log(info, "info")
-                        console.log(lat, "lat")
-                        console.log(lng, "lon")
+                var lat = info[1]
+                var lng = info[2]
+                var result = [lat, lng]
+                console.log(info, "info")
+                console.log(lat, "lat")
+                console.log(lng, "lon")
 
-                        console.log(result, "result")
+                console.log(result, "result")
 
 
-                        var apiKey = "200702695-d743746acbe4331b82eeffe769ec073d";
+                var apiKey = "200702695-d743746acbe4331b82eeffe769ec073d";
 
-                        // create a GET function and input
+                // create a GET function and input
 
-                       
-                        var settings = {
-                            url: "https://www.hikingproject.com/data/get-trails?lat=" +
-                                lat +
-                                "&lon=" +
-                                lng +
-                                "&maxDistance=10&key=" +
-                                apiKey,
-                            method: "GET"
-                            // success: function(result) {
-                            // console.log(result);
-                            // },
-                            // error: function(error) {
-                            // console.log(error);
-                            // }
+
+                var settings = {
+                    url: "https://www.hikingproject.com/data/get-trails?lat=" +
+                        lat +
+                        "&lon=" +
+                        lng +
+                        "&maxDistance=10&key=" +
+                        apiKey,
+                    method: "GET"
+                    // success: function(result) {
+                    // console.log(result);
+                    // },
+                    // error: function(error) {
+                    // console.log(error);
+                    // }
+                };
+
+                // create variable for API
+                $.ajax(settings).then(function (response) {
+
+
+                    // loop through results for the functional logic
+                    for (var i = 0; i < response.trails.length; i++) {
+
+
+                        // append variables to div with id="trail-card"
+
+                        var trailCard = $("<div>");
+                        // trailCard.setAttribute("trail-id", i);
+                        trailCard.append(
+                            "<img class='card-image' src= '" + response.trails[i].imgSmallMed + "'>"
+                        );
+                        trailCard.append("<p class='title'>" + response.trails[i].name + "</p>");
+                        trailCard.append(
+                            "<p class='details'>Length: " + response.trails[i].length + " miles</p>"
+                        );
+                        trailCard.append(
+                            "<p class='details'>Difficulty: " +
+                            response.trails[i].difficulty +
+                            "</p>"
+                        );
+                        trailCard.append(
+                            "<p class='details'>Ascent: " + response.trails[i].ascent + "</p>"
+                        );
+                        trailCard.append(
+                            "<p class='details'>Descent: " + response.trails[i].descent + "</p>"
+                        );
+                        trailCard.append(
+                            "<p class='details'><a href='" +
+                            response.trails[i].url +
+                            "' target='_blank'>More Info</a></p>"
+                        );
+
+                        // append trail card to "resultsTrails"
+
+                        $("#resultsTrails").append(trailCard);
+                    }
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    
+                    headers: {
+                        'X-Zomato-API-Key': 'a62a9e06b2ea5af51b9e60e3fd48ff0f' ,
+                        'Content-Type': 'application/json'
+                    },
+
+                    url: 'https://developers.zomato.com/api/v2.1/geocode?lat=' + lat + '&lon=' + lng,
+                    
+                    dataType: 'json',
+                    // processData: true,
+                    success: function (data) {
+                        console.log('success: ' + data);
+                        for (var j = 0; j < data.nearby_restaurants.length; j++) {
+
+
+                            // append variables to div with id="trail-card"
+
+                            var restCard = $("<div>");
+                            // trailCard.setAttribute("trail-id", i);
+                        
+                            // restCard.append(
+                            //     "<img class='rest-image' src= '" + data.nearby_restaurants[j].featured_image + "'>"
+                            // // );
+                            // console.log("ummm" , data.nearby_restaurants[j].featured_image)
+                            restCard.append("<p class='title'>" + data.nearby_restaurants[j].restaurant.name + "</p>");
+                            restCard.append(
+                                "<p class='details'>Address " + data.nearby_restaurants[j].restaurant.location.address);
+                            restCard.append(
+                                "<p class='details'>Cuisine: " + data.nearby_restaurants[j].restaurant.cuisines);
+                            restCard.append(
+                                "<p class='details'><a href='" +
+                                data.nearby_restaurants[j].restaurant.url +
+                                "' target='_blank'>More Info</a></p>"
+                            );
+
+                            $("#resultsFood").append(restCard);
+
+
+
+
                         };
 
-                        // create variable for API
-                        $.ajax(settings).then(function (response) {
-                            // console.log(response);
-                            // console.log(response.trails[1].name);
+                    }
 
-                            // loop through results for the functional logic
-                            for (var i = 0; i < response.trails.length; i++) {
-                                // console.log(response.trails[i].imgSmallMed);
-                                // console.log(response.trails[i].name);
-                                // console.log(response.trails[i].length);
-                                // console.log(response.trails[i].difficulty);
-                                // console.log(response.trails[i].ascent);
-                                // console.log(response.trails[i].descent);
-                                // console.log(console.log(response.trails[i].url));
-
-                                // append variables to div with id="trail-card"
-
-                                var trailCard = $("<div>");
-                                // trailCard.setAttribute("trail-id", i);
-                                trailCard.append(
-                                    "<img class='card-image' src= '" + response.trails[i].imgSmallMed + "'>"
-                                );
-                                trailCard.append("<p class='title'>" + response.trails[i].name + "</p>");
-                                trailCard.append(
-                                    "<p class='details'>Length: " + response.trails[i].length + " miles</p>"
-                                );
-                                trailCard.append(
-                                    "<p class='details'>Difficulty: " +
-                                    response.trails[i].difficulty +
-                                    "</p>"
-                                );
-                                trailCard.append(
-                                    "<p class='details'>Ascent: " + response.trails[i].ascent + "</p>"
-                                );
-                                trailCard.append(
-                                    "<p class='details'>Descent: " + response.trails[i].descent + "</p>"
-                                );
-                                trailCard.append(
-                                    "<p class='details'><a href='" +
-                                        response.trails[i].url +
-                                    "' target='_blank'>More Info</a></p>"
-                                );
-
-                                // append trail card to "resultsTrails"
-
-                                $("#resultsTrails").append(trailCard);
-                            }
-                        });
-                    };
-
-
-
-                }
-
-                // //zomato api
-                // var zomatoKey = "a62a9e06b2ea5af51b9e60e3fd48ff0f"
-                // var zomSettings = {
-
-                //     url: "https://developers.zomato.com/api/v2.1/search?lat=" + lat + "&lon=" + lng ,
-                //     method: "GET"
-
-                // } 
-
-                // $()
-
-                //weather api
-
-
-
-            )
-           
-
-
-
-
-
+                })
+            }
+        })
     })
-});
+
+
+
+
+
+
+
+
+    // zomato api
+
+
+
+    // weather api
+
+
+
+
+
+
+
+
+
+
+
+
+})
