@@ -44,38 +44,38 @@ $("#submit").on("click", event => {
   state = $("#state")
     .val()
     .trim();
-  console.log(state, "state");
+  // console.log(state, "state");
   city = $("#city")
     .val()
     .trim();
-  console.log("city", city);
+  // console.log("city", city);
   // zipcode = $("#zipCode").val().trim()
   zipcode = $("#zipCode")
     .val()
     .trim();
-  console.log("zipcode", zipcode);
+  // console.log("zipcode", zipcode);
   // date = $("#date").val().trim()
   //     console.log("date" , date)
   // country = $("#country").val().trim()
   //     console.log("country" , country)
 
   database.ref().on("value", function(snapshot) {
-    console.log("snapshot", snapshot.val());
+    // console.log("snapshot", snapshot.val());
 
     //make reference to the database in variable
     const DB = snapshot.val();
 
     const result = DB.filter(info => {
-      console.log("info", info);
+      // console.log("info", info);
       if (info.includes(zipcode)) {
         var lat = info[1];
         var lng = info[2];
         var result = [lat, lng];
-        console.log(info, "info");
-        console.log(lat, "lat");
-        console.log(lng, "lon");
+        // console.log(info, "info");
+        // console.log(lat, "lat");
+        // console.log(lng, "lon");
 
-        console.log(result, "result");
+        // console.log(result, "result");
 
         var apiKey = "200702695-d743746acbe4331b82eeffe769ec073d";
 
@@ -161,7 +161,7 @@ $("#submit").on("click", event => {
           dataType: "json",
           // processData: true,
           success: function(data) {
-            console.log("success: " + data);
+            // console.log("success: " + data);
             for (var j = 0; j < data.nearby_restaurants.length; j++) {
               // append variables to div with id="trail-card"
 
