@@ -43,6 +43,6 @@
 
 ## Acknowledgments
 
-- **Landon Brenner** - _Advice and Troubleshooting_ - [katejamboretz](https://github.com/landon-brenner)
+- **Landon Brenner** - _Advice and Troubleshooting_ - [landon-brenner](https://github.com/landon-brenner)
 - UC Berkeley Extension Full Stack Development 2020 Instructor, TAs and classmates
 - [PurpleBooth README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
