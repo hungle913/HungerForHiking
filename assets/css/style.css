@@ -5,11 +5,13 @@ body {
   color: #25a69a;
   background-color: #ebe6df;
   background-size: cover;
+  margin-top: 40px;
 }
 
 #title {
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 
 .button {
@@ -18,13 +20,13 @@ body {
   text-align: center;
 }
 
-.hiking {
-  font-family: "Pacifico", cursive;
+.hunger {
+  font-family: "Bebas Neue", cursive;
   font-size: 75px;
 }
 
-.hunger {
-  font-family: "Bebas Neue", cursive;
+.hiking {
+  font-family: "Pacifico", cursive;
   font-size: 75px;
 }
 
@@ -60,7 +62,39 @@ p {
   font-weight: bold;
 }
 
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: red;
   opacity: 1; /* Firefox */
+}
+
+/* Media Settings */
+@media only screen and (max-width : 992px) {
+  #hunger-title {
+    max-width: 52%;
+  }
+  #weather-data {
+    max-width: 37%;
+  }
+  
+}
+
+@media only screen and (max-width : 600px) {
+  #hunger-title {
+    max-width: 100%;
+  }
+  #images-container {
+    width: 33.33%;
+  }
+  #weather-data {
+    margin-top: -24px;
+    font-weight: bold;
+    max-width: 100%;
+  }
+  #weather-results {
+    margin-top: 0px;
+  }
+  
+
+  
 }

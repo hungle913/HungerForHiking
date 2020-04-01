@@ -14,54 +14,44 @@
   <body>
     
     <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s2"></div>
-          <div class="input-field col s6">
-             <div id="title"><span class = "hunger">Hunger</span> for <span class = "hiking">Hiking!</span></div>
-          </div>
-        <br>
-        <br>
-          <div class="input-field col s1">
-            <div id="images-container">
-              <img src="assets/images/Weather Icon.png" alt="Weather" id="weather">
-            </div>
-          </div>
-          <div class="input-field col s3">
-            <div id="weather-results"></div>
-          </div>
+      <div class="input-field col s0 m0 l1"></div>
+      <div id="hunger-title" class="input-field col s12 m7 l6">
+          <div id="title"><span class = "hunger">Hunger</span> for <span class = "hiking">Hiking!</span></div>
+      </div>
+      <div id="images-container" class="input-field col s6 m1 l1">
+        <div>
+          <img src="assets/images/Weather Icon.png" alt="Weather" id="weather">
         </div>
-      </form>
+      </div>
+      <div id="weather-data" class="input-field col s6 m4 l4">
+        <div id="weather-results"></div>
+      </div>
     </div>
     
     <div id="search">
       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s2"></div>
-            <div class="input-field col s4">
-              <input id="city" type="text" class="validate" />
-              <label for="city">City</label>
-            </div>
-            <div class="input-field col s4">
-              <input id="state" type="text" class="validate" />
-              <label for="state">State</label>
-            </div>
-          </div>
+        <div class="input-field col s2"></div>
+        <div class="input-field col s4">
+          <input id="city" type="text" class="validate" />
+          <label for="city">City</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="state" type="text" class="validate" />
+          <label for="state">State</label>
+        </div>
+      </div>
         
-          <div class="row">
-            <div class="input-field col s2"></div>
-            <div class="input-field col s4">
-              <input id="zipCode" type="text" class="zip-input" placeholder="REQUIRED" />
-              <label for="zipCode">Zip Code </label>
-            </div>
-          <div class="row">
-            <div class="input-field col s4">
-              <input type="date" id="start" name="trip-start" />
-              <label for="date">Date</label>
-            </div>
-          </div>
-        </form>
+      <div class="row">
+        <div class="input-field col s2"></div>
+        <div class="input-field col s4">
+          <input id="zipCode" type="text" class="zip-input" placeholder="REQUIRED" />
+          <label for="zipCode">Zip Code </label>
+        </div>
+        <div class="row">
+        <div class="input-field col s4">
+          <input type="date" id="start" name="trip-start" />
+          <label for="date">Date</label>
+        </div>
       </div>
     </div>
 
@@ -70,19 +60,15 @@
     </div>
 
     <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <h2>Trails</h2>
-            <div id="resultsTrails"></div>
-          </div>
+      <div class="input-field col s12 m6 l6">
+        <h2>Trails</h2>
+        <div id="resultsTrails"></div>
+      </div>
 
-          <div class="input-field col s6">
-            <h2>Restaurants</h2>
-             <div id="resultsFood"></div>
-          </div>
-        </div>
-      </form>
+      <div class="input-field col s12 m6 l6">
+        <h2>Restaurants</h2>
+          <div id="resultsFood"></div>
+      </div>
     </div>
 
     <div id="map"></div>

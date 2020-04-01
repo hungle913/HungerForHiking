@@ -4,7 +4,7 @@ $(document).ready(function(){
         $("#weather-results").empty()
 
         var zip = $("#zipCode").val().trim();
-        console.log("Zip Code: " + zip);
+        // console.log("Zip Code: " + zip);
 
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",US&appid=7b989adbf1d292228e70f3311479d6e4";
         $.ajax({
@@ -14,19 +14,19 @@ $(document).ready(function(){
             // console.log(response);
 
             var currentWeather = response.weather[0].description;
-            console.log("Current Weather: " + currentWeather);
+            // console.log("Current Weather: " + currentWeather);
 
             var currentTemp = Math.round(((response.main.temp-273.15)*1.8)+32);
-            console.log("Current Temperature: " + currentTemp + " Degrees F");
+            // console.log("Current Temperature: " + currentTemp + " Degrees F");
 
             var minTemp = Math.round(((response.main.temp_min-273.15)*1.8)+32);
-            console.log("Minimum Temperature: " + minTemp + " Degrees F");
+            // console.log("Minimum Temperature: " + minTemp + " Degrees F");
 
             var maxTemp = Math.round(((response.main.temp_max-273.15)*1.8)+32);
-            console.log("Maximum Temperature: " + maxTemp + " Degrees F");
+            // console.log("Maximum Temperature: " + maxTemp + " Degrees F");
 
             var windSpeed = response.wind.speed;
-            console.log("Wind Speed: " + windSpeed + " MPH");
+            // console.log("Wind Speed: " + windSpeed + " MPH");
 
             var weatherResults = $("<div>");
 
