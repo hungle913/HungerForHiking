@@ -70,13 +70,21 @@ p {
 
 /* Media Settings */
 @media only screen and (max-width : 992px) {
-  #hunger-title {
-    max-width: 52%;
+  #images-container {
+    max-width: 50%;
   }
   #weather-data {
-    max-width: 37%;
+    max-width: 50%;
   }
-  
+  #weather {
+    display: inline-block;
+    text-align: right;
+    float: right;
+  }
+  #weather-results {
+    float: left;
+  }
+   
 }
 
 @media only screen and (max-width : 600px) {
