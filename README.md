@@ -10,7 +10,7 @@
 
 ### Link to Live Site
 
-[Hunger for Hiking](https://hungle913.github.io/Project1/)
+[Hunger for Hiking](https://hungle913.github.io/HungerForHiking/)
 
 ### Screenshot
 
